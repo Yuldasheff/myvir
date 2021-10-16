@@ -8,6 +8,8 @@ target/
 .bloop/
 .bsp/
 .metals/
+.ignore
+.idea_modules
 
 ### Scala ###
 *.class
