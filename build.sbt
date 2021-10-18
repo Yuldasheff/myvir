@@ -9,6 +9,7 @@ lazy val backend = project
   .settings(
     libraryDependencies ++= Seq(
       "org.tpolecat" %% "doobie-core" % "1.0.0-RC1",
+      "org.postgresql" % "postgresql" % "42.2.24",
       "org.tpolecat" %% "doobie-hikari" % "1.0.0-RC1",
       "org.tpolecat" %% "doobie-postgres"  % "1.0.0-RC1",
       "org.http4s" %% "http4s-blaze-server" % "0.23.5",
