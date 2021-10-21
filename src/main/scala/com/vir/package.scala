@@ -22,15 +22,12 @@ import scala.concurrent.ExecutionContext
 
 package object vir {
 
-  class PingApi() extends Http4sDsl[IO]{
-    val routes = HttpRoutes.of[IO]{
-      case GET -> Root / "ping" => Ok("pong")
-    }
-  }
-
-  object PingApi extends IOApp{
+  object PingApi extends IOApp with Http4sDsl[IO]{
     val httpApp = Router(
-      "/" -> new PingApi().routes
+      "/" -> HttpRoutes.of[IO]{
+        case GET -> Root / "ping" => Ok("pong")
+        case _ => BadRequest("The given year is not valid")
+      }
     ).orNotFound
 
 
@@ -42,4 +39,6 @@ package object vir {
       .bindHttp(8000, "0.0.0.0")
       .withHttpApp(httpApp)
       .serve
-}}
+}
+
+}
