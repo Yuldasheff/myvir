@@ -1,7 +1,7 @@
 package com.vir
 
 
-import org.http4s.*
+import org.http4s._
 import org.http4s.blaze.server.BlazeServerBuilder
 import org.http4s.server.Router
 import cats.effect._
