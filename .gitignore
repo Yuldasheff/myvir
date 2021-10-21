@@ -7,8 +7,9 @@ target/
 .idea/
 .bloop/
 .bsp/
+.bsp/sbt.json
 .metals/
-.ignore
+.ignore1
 .idea_modules
 
 ### Scala ###
