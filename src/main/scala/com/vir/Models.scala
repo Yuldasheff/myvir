@@ -1,14 +1,14 @@
 package com
 
-import com.Models.WriterModels.{Id, Email, Pass, Name, Status, OrdersCompleted, TotalEarned}
-import com.Models.OrderModels.{Id, Title, WordCount, NOHeadings, Status, NOImages, NOParagraphs, Comments, Plagiarism}
-import com.Models.AssignmentModels.{Id, OrderId, WriterId, CompletedAt, DueDate, CreatedAt}
+import com.Models.AssignmentModels.*
+import com.Models.OrderModels.*
+import com.Models.WriterModels.{Id as _, Status as _, *}
 
 import java.util.{Date, UUID}
 
 object Models {
 
-  object WriterModels{
+  object WriterModels {
 
     type Id = UUID
     type Email = String
@@ -20,7 +20,7 @@ object Models {
 
   }
 
-  object OrderModels{
+  object OrderModels {
 
     type Id = UUID
     type Title = String
@@ -34,7 +34,7 @@ object Models {
 
   }
 
-  object AssignmentModels{
+  object AssignmentModels {
 
     type Id = UUID
     type OrderId = UUID
@@ -45,8 +45,33 @@ object Models {
 
   }
 
-  case class Writer(id: Id, email: Email, pass: Pass, name: Name, status: Status, ordersCompleted: OrdersCompleted, totalEarned: TotalEarned)
-  case class Order(id: Id, title: Title, status: Status, wordCount: WordCount, NOHeadings: NOHeadings, NOImages: NOImages, NOParagraphs: NOParagraphs, comments: Comments, plagiarism: Plagiarism)
-  case class Assignment(id: Id, writerId: WriterId, orderId: OrderId, createdAt: CreatedAt, dueDate: DueDate, completedAt: CompletedAt)
+  case class Writer(
+    id: Id,
+    email: Email,
+    pass: Pass,
+    name: Name,
+    status: Status,
+    ordersCompleted: OrdersCompleted,
+    totalEarned: TotalEarned
+  )
+  case class Order(
+    id: Id,
+    title: Title,
+    status: Status,
+    wordCount: WordCount,
+    NOHeadings: NOHeadings,
+    NOImages: NOImages,
+    NOParagraphs: NOParagraphs,
+    comments: Comments,
+    plagiarism: Plagiarism
+  )
+  case class Assignment(
+    id: Id,
+    writerId: WriterId,
+    orderId: OrderId,
+    createdAt: CreatedAt,
+    dueDate: DueDate,
+    completedAt: CompletedAt
+  )
 
 }
