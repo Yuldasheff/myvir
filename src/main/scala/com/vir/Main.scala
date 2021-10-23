@@ -17,7 +17,7 @@ import org.http4s.implicits._
 import org.http4s.server._
 import scala.concurrent.ExecutionContext
 
-object PingApi extends IOApp with Http4sDsl[IO]{
+object Main extends IOApp with Http4sDsl[IO]{
   val httpApp = Router(
     "/" -> HttpRoutes.of[IO]{
       case GET -> Root / "ping" => Ok("pong")
